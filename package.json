@@ -1,0 +1,39 @@
+{
+  "name": "steamer.oa.com",
+  "version": "1.0.0",
+  "description": "腾讯alloyteam研发的steamer前端开发体系，主要围绕脚手架，并基于众多命令，将开发中的各种流程打通。",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "fetch:plugins": "node ./fetch/plugins.js",
+    "fetch:starterkits": "node ./fetch/starterkits.js",
+    "fetch:pkgs": "node ./fetch/index.js",
+    "fetch": "npm run fetch:plugins && npm run fetch:starterkits && npm run fetch:pkgs",
+    "gh-pages": "gh-pages -d ./docs/.vuepress/dist -b master",
+    "dist": "npm run fetch && npm run dist:vuepress",
+    "dist:vuepress": "vuepress build docs",
+    "deploy": "npm run dist && npm run gh-pages",
+    "start": "vuepress dev docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steamerjs/steamerjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steamerjs/steamerjs/issues"
+  },
+  "homepage": "https://github.com/steamerjs/steamerjs#readme",
+  "dependencies": {
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "async": "^2.5.0",
+    "gh-pages": "^1.2.0",
+    "vuepress": "^0.14.1"
+  }
+}

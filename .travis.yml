@@ -1,0 +1,12 @@
+sudo: false
+language: node_js
+node_js:
+  - node
+
+before_install:
+  - export NODE_PATH=$(npm root -g)
+
+script: 
+  - npm run deploy
+
+after_success:
